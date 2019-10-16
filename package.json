@@ -1,0 +1,44 @@
+{
+    "name": "mole-rpc-transport-react-native",
+    "version": "0.0.1",
+    "description": "Easy way to communicate between reacct-native/webview using Mole-RPC (JSON RPC library)",
+    "main": "index.js",
+    "scripts": {
+        "test": "node ./tests/autotests.js || exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/koorchik/node-mole-rpc-transport-webworker.git"
+    },
+    "engines": {
+        "node": ">=8.2.0"
+    },
+    "peerDependencies": {
+        "mole-rpc": "^0.3.0"
+    },
+    "devDependencies": {
+        "mole-rpc": "^0.3.0"
+    },
+    "keywords": [
+        "jsonrpc",
+        "json-rpc",
+        "json",
+        "jsonrpc-2.0",
+        "rpc",
+        "reactnative",
+        "react native",
+        "react-native",
+        "webview",
+        "react-native-web-view",
+        "react native web view",
+        "mole",
+        "transport",
+        "mole-transport"
+    ],
+    "author": "ViraRodionova",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/koorchik/node-mole-rpc-transport-webworker/issues"
+    },
+    "homepage": "https://github.com/koorchik/node-mole-rpc-transport-webworker#readme"
+}
