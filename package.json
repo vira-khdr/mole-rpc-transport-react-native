@@ -11,7 +11,8 @@
         "url": "git+https://github.com/ViraRodionova/mole-rpc-transport-react-native.git"
     },
     "peerDependencies": {
-        "mole-rpc": "1.*"
+        "mole-rpc": "1.*",
+        "react-native-webview": "^9.2.1"
     },
     "devDependencies": {
         "mole-rpc": "1.*"
