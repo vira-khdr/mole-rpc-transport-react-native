@@ -1,4 +1,4 @@
-class TransportClient {
+class Transport {
     // windowListener - windowListener instance for webview side
     // webview ref for ReactNative side
     constructor({ windowListener }) {
@@ -16,4 +16,4 @@ class TransportClient {
     }
 }
 
-export default TransportClient;
+export default Transport;

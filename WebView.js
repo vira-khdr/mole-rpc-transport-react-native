@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
-import PropTypes            from 'prop-types';
-import { WebView }          from 'react-native-webview';
+import React       from 'react';
+import PropTypes   from 'prop-types';
+import { WebView } from 'react-native-webview';
 
 let WEBVIEW_WAS_RENDERED = false;
 
-export default class WebViewWrapper extends Component {
+export default class WebViewWrapper extends React.PureComponent {
     static propTypes = {
         onLoadEnd : PropTypes.func,
         onReload  : PropTypes.func
@@ -20,6 +20,7 @@ export default class WebViewWrapper extends Component {
 
         this.listeners = [];
         this.loaded = false;
+        this.webView = React.createRef();
     }
 
     handleOnMessageEvent = (_event) => {
@@ -45,27 +46,19 @@ export default class WebViewWrapper extends Component {
     }
 
     postMessage = (...params) => {
-        this.webView.postMessage(...params);
+        this.webView.current.postMessage(...params);
     }
 
     render() {
         if (WEBVIEW_WAS_RENDERED) console.warn('WebView component has been rerendered! You may lose state of your app inside WebView');
         else WEBVIEW_WAS_RENDERED = true;
 
-        const webViewProps = {};
-
-        if (config.useLocal) {
-            webViewProps.source = { uri: config.localURI };
-        } else {
-            webViewProps.source = { html: HTML };
-            webViewProps.injectedJavaScript = myJSLib;
-        }
-
         return (
             <WebView
                 {...this.props}
-                ref       = {webView => this.webView = webView}
+                ref       = {this.webView}
                 onMessage = {this.handleOnMessageEvent}
+                onLoadEnd = {this.handleLoadEnd}
             />
         );
     }
