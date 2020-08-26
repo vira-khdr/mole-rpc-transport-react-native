@@ -14,6 +14,10 @@ class Transport {
             this.windowListener.postMessage(resData);
         });
     }
+
+    async sendData(data) {
+        this.windowListener.postMessage(data);
+    }
 }
 
 export default Transport;
