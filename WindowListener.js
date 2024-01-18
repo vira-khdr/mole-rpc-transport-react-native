@@ -34,7 +34,7 @@ class WindowListener {
     onWindowMessage(_event) {
         const event = _event.data || '';
 
-        if (!event || typeof event !== 'string') return;
+        if (!event || typeof event !== 'string' || event === 'undefined') return;
         if (event.startsWith('webpack')) return;
         if (this.env !== ENVS.WEBVIEW) return;
         for (const listener of this.listeners) {
